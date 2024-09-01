@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volcanic Eruption Information & Preparedness Tips</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        header {
+            background-color: #D9534F;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+        }
+
+        section {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #FFE9E4;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style-type: none;
+            margin-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        ul li i {
+            color: #D9534F;
+            margin-right: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #D9534F;
+            color: white;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                margin: 10px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            section {
+                padding: 15px;
+            }
+        }
+
+        .map-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .map-container img {
+            width: 100%;
+            height: 625px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .content {
+            display: flex;
+ 
+        }
+
+        .protection-acts {
+            background-color: #FFE9E4;
+        }
+
+        .protection-acts ul {
+            list-style-type: none;
+        }
+
+        .protection-acts li {
+            margin-bottom: 10px;
+        }
+
+        .protection-acts i {
+            color: #D9534F;
+            margin-right: 10px;
+        }
+        .back-button {
+            position: absolute;
+            top: 45px;
+            left: 25px;
+            background-color: #fff;
+            border: none;
+            color: black;
+            padding: 10px;
+            font-size: 1.2em;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: silver;
+            color: #fff;
+        }
+
+        .back-button i {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <button class="back-button" onclick="window.history.back();">
+            <i class="fas fa-arrow-left"></i>
+        </button>
+        <h1>Volcanic Eruption Information & Preparedness Tips</h1>
+    </header>
+
+    <div class="content">
+        <div class="map-container">
+            <img src="https://www.hlimg.com/images/stories/738X538/1-andamanmangroves_1512537713m.jpg" alt="Map of Volcano-Prone Areas">
+        </div>
+        <div>
+            <section class="volcano-info">
+                <h2>What is a Volcanic Eruption?</h2>
+                <p>A volcanic eruption occurs when magma from beneath the Earth's crust escapes to the surface, often causing explosive releases of gas, ash, and lava. Volcanic eruptions can cause widespread damage and pose significant risks to life and property.</p>
+                <p>Understanding volcanic activity and being prepared can significantly reduce the risks associated with eruptions.</p>
+            </section>
+
+            <section class="preparedness-tips">
+                <h2>Preparedness Tips</h2>
+                <ul>
+                    <li><i class="fas fa-hat-hard"></i> Know the evacuation routes and plan ahead with your family.</li>
+                    <li><i class="fas fa-box"></i> Prepare an emergency kit with essentials like masks, food, water, and first aid supplies.</li>
+                    <li><i class="fas fa-gas-pump"></i> Keep your vehicle fueled and ready for evacuation.</li>
+                    <li><i class="fas fa-exclamation-triangle"></i> Monitor volcanic alerts and advisories from reliable sources.</li>
+                    <li><i class="fas fa-door-closed"></i> Stay indoors during ashfall, and close windows and doors to avoid inhaling ash.</li>
+                    <li><i class="fas fa-tree"></i> Protect livestock and pets by bringing them indoors or ensuring they have adequate shelter.</li>
+                </ul>
+            </section>
+
+            <section class="protection-acts">
+                <h2>Protection Acts</h2>
+                <ul>
+                    <li><i class="fas fa-balance-scale"></i> The Volcanic Hazards Mitigation Act: Establishes guidelines for monitoring and responding to volcanic activity.</li>
+                    <li><i class="fas fa-shield-alt"></i> The Evacuation and Safety Act: Provides resources for planning and executing safe evacuations in volcanic regions.</li>
+                    <li><i class="fas fa-mountain"></i> The Volcano Monitoring Initiative: Supports the installation and maintenance of monitoring equipment around active volcanoes.</li>
+                    <li><i class="fas fa-house-damage"></i> The Disaster Recovery Act: Offers aid and support for communities affected by volcanic eruptions.</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+    
+</body>
+</html>
