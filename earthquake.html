@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earthquake Information & Preparedness Tips</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    margin: 20px;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+section {
+    margin: 20px 0;
+    padding: 20px;
+    background-color:#e9f5e9 ;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+ul {
+    list-style-type: square;
+    margin-left: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #4CAF50;
+    color: white;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    body {
+        margin: 10px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    section {
+        padding: 15px;
+    }
+}
+.map-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .map-container img {
+            width: 100%;
+            height: 625px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .content{
+            display: flex;
+        }
+
+        .protection-acts {
+            background-color: #e9f5e9;
+        }
+
+        .protection-acts ul {
+            list-style-type: circle;
+        }
+
+        .protection-acts li {
+            margin-bottom: 10px;
+        }
+
+        .protection-acts i {
+            color: #4CAF50;
+            margin-right: 10px;
+        }
+        .back-button {
+            position: absolute;
+            top: 45px;
+            left: 25px;
+            background-color: #fff;
+            border: none;
+            color: black;
+            padding: 10px;
+            font-size: 1.2em;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: silver;
+            color: #fff;
+        }
+
+        .back-button i {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <button class="back-button" onclick="window.history.back();">
+            <i class="fas fa-arrow-left"></i>
+        </button>
+        <h1>Earthquake Information & Preparedness Tips</h1>
+    </header>
+    
+
+   
+    <div class="content">
+        <div class="map-container">
+            <!-- <h2>Hurricane-Prone Areas</h2> -->
+            <img src="https://pbs.twimg.com/media/FmPD7OhaUAUTsW1.png" alt="Map of Hurricane-Prone Areas">
+        </div>
+        <div>
+    <section class="earthquake-info">
+        <h2>What is an Earthquake?</h2>
+        <p>An earthquake is the shaking of the surface of the Earth resulting from a sudden release of energy in the Earth's lithosphere that creates seismic waves.</p>
+        <p>Earthquakes can cause damage to buildings, infrastructure, and result in loss of life. It is important to be informed and prepared for such events.</p>
+    </section>
+    
+    <section class="preparedness-tips">
+        <h2>Preparedness Tips</h2>
+        <ul>
+            <li><i class="fas fa-couch"></i> Secure heavy furniture and objects that could fall during an earthquake.</li>
+            <li><i class="fas fa-box"></i> Have an emergency kit ready with food, water, and medical supplies.</li>
+            <li><i class="fas fa-home"></i> Know the safe spots in your home (under sturdy furniture, away from windows).</li>
+            <li><i class="fas fa-people-arrows"></i> Practice “Drop, Cover, and Hold On” with your family and co-workers.</li>
+            <li><i class="fas fa-building"></i> Ensure your building is earthquake-resistant and complies with safety standards.</li>
+            <li><i class="fas fa-info-circle"></i> Stay informed through reliable sources about earthquake risks in your area.</li>
+        </ul>
+    </section>
+
+    <section class="protection-acts">
+        <h2> Protection Acts</h2>
+        <ul>
+            <li><i class="fas fa-law"></i> Earthquake Hazard Reduction Act: Mandates the implementation of safety measures in buildings to reduce earthquake risks.</li>
+            <li><i class="fas fa-gavel"></i> Seismic Safety Standards Act: Establishes guidelines for earthquake-resistant construction and retrofitting.</li>
+            <li><i class="fas fa-balance-scale"></i> Emergency Response Act: Ensures that disaster response plans are in place and regularly updated for effective emergency management.</li>
+            <li><i class="fas fa-handshake"></i> Community Resilience Act: Promotes community-based initiatives to enhance preparedness and recovery from earthquakes.</li>
+        </ul>
+    </section>
+</div>
+
+   
+</body>
+</html>
