@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .ribbon {
+            position: relative;
+            background-color: #ff4c4c;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            z-index: 1000;
+        }
+
+        .ribbon:before, .ribbon:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            border-style: solid;
+            border-width: 10px 10px 0;
+            width: 0;
+        }
+
+        .ribbon:before {
+            left: 0;
+            border-color: #ff4c4c transparent;
+        }
+
+        .ribbon:after {
+            right: 0;
+            border-color: #ff4c4c transparent;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+        }
+
+        .nav-links a:hover {
+            background-color: #555;
+            border-radius: 5px;
+        }
+
+        .hero {
+            position: relative;
+            height: 80vh;
+            color: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            overflow: hidden;
+        }
+
+        /* .slideshow-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slides {
+            display: flex;
+            width: 400%;
+            height: 100%;
+            animation: slide 60s infinite;
+        }
+
+        .slides img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        } */
+
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-100%); }
+            50% { transform: translateX(-200%); }
+            75% { transform: translateX(-300%); }
+            100% { transform: translateX(0); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            background-color: #ff4c4c;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+        }
+
+        .btn:hover {
+            background-color: #ff1a1a;
+        }
+
+        .services, .resources {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .services h2, .resources h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+
+        .service-cards {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: skyblue;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+        }
+
+        .resources ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .resources li {
+            margin: 10px 0;
+        }
+
+        .resources a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .resources a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                background-color: #f4f4f9;
+                color: #333;
+                line-height: 1.6;
+            }
+    
+            header {
+                background-color: #333;
+                color: white;
+                padding: 30px 20px;
+                text-align: center;
+            }
+    
+            header h1 {
+                margin: 0;
+                font-size: 2.5rem;
+            }
+    
+            header p {
+                margin-top: 10px;
+                font-size: 1.2rem;
+            }
+    
+            h2{
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                font-size: 2rem;
+            }
+    
+            .disaster-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 20px;
+                padding: 40px 20px;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+    
+            .disaster-card {
+                background-color: white;
+                border-radius: 10px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+                transition: transform 0.2s;
+                text-align: center;
+                padding: 10px;
+            }
+    
+            .disaster-card:hover {
+                transform: scale(1.05);
+            }
+    
+            .disaster-card img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+            }
+    
+            .disaster-card h2 {
+                font-size: 1.5rem;
+                color: #333;
+                margin: 10px 0;
+            }
+    
+            .disaster-card a {
+                display: block;
+                margin: 10px 0;
+                font-size: 1.5rem;
+                font-weight: 500;
+                color: #333;
+                text-decoration: none;
+            }
+    
+            .disaster-card a:hover {
+                text-decoration: underline;
+            }
+    
+            footer {
+                background-color: #333;
+                color: white;
+                text-align: center;
+                padding: 20px;
+                margin-top: 40px;
+            }
+       
+    </style>
+</head>
+<body>
+    <header>
+        <div class="ribbon">Important: Stay Updated with the Latest Disaster Alerts</div>
+
+        <nav>
+            <div class="logo">
+                <h1>Disaster Management</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="slideshow-container">
+            <div class="slides">
+                <img src="https://th.bing.com/th/id/OIP.24ImdxsKVFMJgaSJ0O7PWgHaC3?w=301&h=135&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Slide 1">
+                <img src="https://th.bing.com/th/id/OIP.kpEt4NnzC0e7VCjZBR_VxAHaEK?w=308&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Slide 2">
+                <img src="https://th.bing.com/th/id/OIP.CQ90nXRWgXRem7MZCTwFsAHaHa?w=179&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Slide 3">
+                <img src="https://th.bing.com/th/id/OIP.deHg15Ivu3f_KZCEkBANIwHaEv?w=278&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Slide 4">
+            </div>
+        </div>
+        <div class="hero-content">
+            <h2>Be Prepared, Stay Safe</h2>
+            <p>Your source for the latest information and resources on disaster preparedness and response.</p>
+            <a href="#services" class="btn">Learn More</a>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <div class="service-cards">
+            <div class="card">
+                <i class="fas fa-info-circle fa-3x"></i>
+                <h3>Information</h3>
+                <p>Receive information and guide for disasters.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-clipboard-list fa-3x"></i>
+                <h3>Preparedness Training</h3>
+                <p>Access resources to prepare for various types of disasters.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-life-ring fa-3x"></i>
+                <h3>Recovery Assistance</h3>
+                <p>Guidance and support for recovery after a disaster.</p>
+            </div>
+        </div>
+    </section>
+    <body>
+        <header>
+            <h1>Understanding Different Types of Disasters</h1>
+            <p>Learn about the various types of natural disasters and their impacts.</p>
+        </header>
+    
+        <h2>Natural Disasters</h2>
+        <section class="disaster-grid">
+            <div class="disaster-card">
+                <img src="volcanic eruption.jpeg.jpg" alt="volcanic eruption Image">
+                <a href="volcanic eruption.html" class="button">Volcanic eruption</a>
+            </div>
+            <div class="disaster-card">
+                <img src="earthquake.jpeg.jpg" alt="earthquake">
+                <a href="earthquake.html" class="button">Earthquake</a>
+            </div>
+            <div class="disaster-card">
+                <img src="drought.jpeg.jpg" alt="Drought Image">
+                <a href="drought.html" class="button">Drought</a>
+            </div>
+            <div class="disaster-card">
+                <img src="flood.jpeg.jpg" alt="Flood Image">
+                <a href="flood.html" class="button">Flood</a>
+            </div>
+            <div class="disaster-card">
+                <img src="hurricane.jpeg.jpg" alt="Hurricane Image">
+                <a href="hurricane.html" class="button"> Hurricane</a>
+            </div>
+            </section>
+            <h2>Human-made Disasters</h2>
+            <section class="disaster-grid">
+            <div class="disaster-card">
+                <img src="wildfire.jpeg.jpg" alt="Wildfire Image">
+                <a href="wildfire.html" class="button">Wildfire</a>
+            </div>
+            <div class="disaster-card">
+                <img src="deforestation.jpeg.jpg" alt="Deforestation Image">
+                <a href="deforestation.html" class="button">Deforestation</a>
+            </div>
+            <div class="disaster-card">
+                <img src="heatwave.jpeg.jpg" alt="heatwave Image">
+                <a href="heatwave.html" class="button">Heatwave</a>
+            </div>
+        </section>
+    
+    </body>
+    </html>
+    <section id="resources" class="resources">
+        <h2>Resources</h2>
+        <ul>
+            <li><a href="#">Emergency Kit Checklist</a></li>
+            <li><a href="#">Disaster Response Plan</a></li>
+            <li><a href="#">Community Support Networks</a></li>
+        </ul>
+    </section>
+
+    <footer id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: info@disastermanagement.com | Phone: 123-456-7890</p>
+        <p>&copy; 2024 Disaster Management. All rights reserved.</p>
+    </footer>
+    
+</body>
+</html>
