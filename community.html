@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Support Network</title>
+    <style>
+        /* Basic styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #5cb85c;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 20px;
+            margin: 10px 0;
+            background-color: white;
+            border-radius: 8px;
+        }
+
+        h2 {
+            color: #5cb85c;
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+
+        /* Styles for the filter input */
+        .filter-container {
+            margin-bottom: 20px;
+        }
+
+        .filter-container input {
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Community Support Network</h1>
+        <p>Disaster Management Help</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#hospitals">Nearby Hospitals</a></li>
+            <li><a href="#ngos">NGOs</a></li>
+            <li><a href="#emergency">Emergency Contacts</a></li>
+        </ul>
+    </nav>
+
+    <section id="hospitals">
+        <h2>Nearby Hospitals</h2>
+        <div class="filter-container">
+            <input type="text" id="filter" placeholder="Filter by location...">
+        </div>
+        <table id="hospital-table">
+            <tr>
+                <th>Hospital Name</th>
+                <th>Location</th>
+                <th>Contact</th>
+            </tr>
+            <tr>
+                <td>Neelam Hospital</td>
+                <td>Rajpura, Patiala</td>
+                <td>(555) 123-4567</td>
+            </tr>
+            <tr>
+                <td>Gian Sagar Hospital</td>
+                <td>Rajpura, Patiala</td>
+                <td>(555) 234-5678</td>
+            </tr>
+            <tr>
+                <td>Citi Hospital</td>
+                <td>Bhogla Road, Patiala</td>
+                <td>(555) 345-6789</td>
+            </tr>
+            <tr>
+                <td>Guru Nanak Hospital</td>
+                <td>Mohinder Ganj, Patiala</td>
+                <td>(555) 345-6789</td>
+            </tr>
+            <tr>
+                <td>Paras Hospital</td>
+                <td>Panchkula</td>
+                <td>(555) 345-6789</td>
+            </tr>
+            <tr>
+                <td>PGI Nehru Hospital</td>
+                <td>Chandigarh</td>
+                <td>(555) 345-6789</td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="ngos">
+        <h2>NGOs Offering Support</h2>
+        <ul>
+            <li><strong>Helping Hands:</strong> Focuses on disaster relief and supplies distribution. Contact: (555) 345-6789</li>
+            <li><strong>Relief Now:</strong> Provides shelter and medical assistance. Contact: (555) 456-7890</li>
+            <li><strong>Smile Foundation:</strong> Provides dry meals, hygiene kits, and critical kits. Contact: (555) 456-7890</li>
+            <li><strong>Help Age India:</strong> Focuses on education, disaster relief, and old-age services.</li>
+        </ul>
+    </section>
+
+    <section id="emergency">
+        <h2>Emergency Contacts</h2>
+        <ul>
+            <li><strong>NATIONAL EMERGENCY NUMBER:</strong> 112</li>
+            <li><strong>Disaster Management Services:</strong> 108</li>
+            <li><strong>Police:</strong> 100</li>
+            <li><strong>Fire Department:</strong> 101</li>
+            <li><strong>Ambulance:</strong> 102</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Community Support Network</p>
+    </footer>
+
+    <script>
+        const links = document.querySelectorAll('nav ul li a');
+        for (const link of links) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
+            });
+        }
+
+        document.getElementById('filter').addEventListener('input', function() {
+            const filterValue = this.value.toLowerCase();
+            const tableRows = document.querySelectorAll('#hospital-table tr:not(:first-child)');
+            tableRows.forEach(row => {
+                const locationCell = row.cells[1].textContent.toLowerCase();
+                if (locationCell.includes(filterValue)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
